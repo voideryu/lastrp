@@ -1,0 +1,16 @@
+C:\Users\meruem\OneDrive\Documents\THUCTAP\projects\lastrp\ProjectFiles\NetSolution\bin\lastrp.deps.json
+C:\Users\meruem\OneDrive\Documents\THUCTAP\projects\lastrp\ProjectFiles\NetSolution\bin\lastrp.dll
+C:\Users\meruem\OneDrive\Documents\THUCTAP\projects\lastrp\ProjectFiles\NetSolution\bin\lastrp.pdb
+C:\Users\meruem\OneDrive\Documents\THUCTAP\projects\lastrp\ProjectFiles\NetSolution\bin\LoremNET.dll
+C:\Users\meruem\OneDrive\Documents\THUCTAP\projects\lastrp\ProjectFiles\NetSolution\bin\FftSharp.dll
+C:\Users\meruem\OneDrive\Documents\THUCTAP\projects\lastrp\ProjectFiles\NetSolution\bin\FftSharp.xml
+C:\Users\meruem\OneDrive\Documents\THUCTAP\projects\lastrp\ProjectFiles\NetSolution\obj\Debug\lastrp.csproj.AssemblyReference.cache
+C:\Users\meruem\OneDrive\Documents\THUCTAP\projects\lastrp\ProjectFiles\NetSolution\obj\Debug\lastrp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\meruem\OneDrive\Documents\THUCTAP\projects\lastrp\ProjectFiles\NetSolution\obj\Debug\lastrp.AssemblyInfoInputs.cache
+C:\Users\meruem\OneDrive\Documents\THUCTAP\projects\lastrp\ProjectFiles\NetSolution\obj\Debug\lastrp.AssemblyInfo.cs
+C:\Users\meruem\OneDrive\Documents\THUCTAP\projects\lastrp\ProjectFiles\NetSolution\obj\Debug\lastrp.csproj.CoreCompileInputs.cache
+C:\Users\meruem\OneDrive\Documents\THUCTAP\projects\lastrp\ProjectFiles\NetSolution\obj\Debug\lastrp.csproj.Up2Date
+C:\Users\meruem\OneDrive\Documents\THUCTAP\projects\lastrp\ProjectFiles\NetSolution\obj\Debug\lastrp.dll
+C:\Users\meruem\OneDrive\Documents\THUCTAP\projects\lastrp\ProjectFiles\NetSolution\obj\Debug\refint\lastrp.dll
+C:\Users\meruem\OneDrive\Documents\THUCTAP\projects\lastrp\ProjectFiles\NetSolution\obj\Debug\lastrp.pdb
+C:\Users\meruem\OneDrive\Documents\THUCTAP\projects\lastrp\ProjectFiles\NetSolution\obj\Debug\ref\lastrp.dll

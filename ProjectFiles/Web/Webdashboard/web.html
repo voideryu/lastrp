@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>ECharts</title>
+  <script src="echarts.js"></script>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    #main {
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(20px);
+    }
+  </style>
+</head>
+<body>
+  <div id="main"></div>
+
+  <script type="text/javascript">
+    const chartDom = document.getElementById('main');
+    const myChart = echarts.init(chartDom);
+    const labelOption = {
+      show: true,
+      position: 'insideBottom',
+      distance: 15,
+      align: 'left',
+      verticalAlign: 'middle',
+      rotate: 90,
+      formatter: '{c}  {name|{a}}',
+      fontSize: 16,
+      rich: {
+        name: {}
+      }
+    };
+
+    option = {
+      tooltip: {
+        formatter: '{a} <br/>{b} : {c}%'
+      },
+      series: [
+        {
+          name: 'Pressure',
+          type: 'gauge',
+          progress: {
+            show: true
+          },
+          detail: {
+            valueAnimation: true,
+            formatter: '{value}'
+          },
+          data: [
+            {
+              value: 50,
+              name: 'SCORE'
+            }
+          ]
+        }
+      ]
+    };
+    myChart.setOption(option);
+  </script>
+</body>
+</html>

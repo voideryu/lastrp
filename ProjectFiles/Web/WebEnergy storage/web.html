@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>ECharts</title>
+  <script src="echarts.js"></script>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    #main {
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(20px);
+    }
+  </style>
+</head>
+<body>
+  <div id="main"></div>
+
+  <script type="text/javascript">
+    const chartDom = document.getElementById('main');
+    const myChart = echarts.init(chartDom);
+    const labelOption = {
+      show: true,
+      position: 'insideBottom',
+      distance: 20,
+      align: 'left',
+      verticalAlign: 'middle',
+      rotate: 90,
+      formatter: '{c}  {name|{a}}',
+      fontSize: 10,
+      rich: {
+        name: {}
+      }
+    };
+
+    const gaugeData = [
+  {
+    value: 5.19,
+    name: 'Perfect',
+    title: {
+      offsetCenter: ['0%', '-50%'] // cao hơn
+    },
+    detail: {
+      valueAnimation: true,
+      offsetCenter: ['0%', '-30%']
+    }
+  },
+  {
+    value: 49.38,
+    name: 'Good',
+    title: {
+      offsetCenter: ['0%', '-10%']
+    },
+    detail: {
+      valueAnimation: true,
+      offsetCenter: ['0%', '7.5%']
+    }
+  },
+  {
+    value: 82.71,
+    name: 'Commonly',
+    title: {
+      offsetCenter: ['0%', '35%'] // thấp hơn
+    },
+    detail: {
+      valueAnimation: true,
+      offsetCenter: ['0%', '50%']
+    }
+  }
+];
+option = {
+      series: [
+        {
+          type: 'gauge',
+          startAngle: 90,
+          endAngle: -270,
+          pointer: {
+            show: false
+          },
+          progress: {
+            show: true,
+            overlap: false,
+            roundCap: true,
+            clip: false,
+            itemStyle: {
+              borderWidth: 1,
+              borderColor: '#464646'
+            }
+          },
+          axisLine: {
+            lineStyle: {
+              width: 20
+            }
+          },
+          splitLine: {
+            show: false,
+            distance: 0,
+            length: 20
+          },
+          axisTick: {
+            show: false
+          },
+          axisLabel: {
+            show: false,
+            distance: 70
+          },
+          data: gaugeData,
+          title: {
+            fontSize: 10
+          },
+          detail: {
+            width: 20,
+            height: 7,
+            fontSize: 10,
+            color: 'inherit',
+            borderColor: 'inherit',
+            borderRadius: 20,
+            borderWidth: 1,
+            formatter: '{value}%'
+          }
+        }
+      ]
+    };
+    setInterval(function () {
+      gaugeData[0].value = +(Math.random() * 100).toFixed(2);
+      gaugeData[1].value = +(Math.random() * 100).toFixed(2);
+      gaugeData[2].value = +(Math.random() * 100).toFixed(2);
+      myChart.setOption({
+        series: [
+          {
+            data: gaugeData,
+            pointer: {
+              show: false
+            }
+          }
+        ]
+      });
+    }, 2000);
+    myChart.setOption(option);
+  </script>
+</body>
+</html>

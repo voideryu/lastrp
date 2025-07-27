@@ -1,0 +1,336 @@
+Name: DataStores
+Type: DataStoresCategoryFolder
+Children:
+- Name: ODBCDatabase1
+  Type: ODBCStore
+  Children:
+  - Name: Tables
+    Type: BaseObjectType
+    Children:
+    - Name: Devices
+      Type: ODBCStoreTable
+      Children:
+      - Class: Reference
+        Target: ns=8;i=12
+        Direction: Forward
+      - Class: Reference
+        Target: ns=8;i=15
+        Direction: Forward
+      - Class: Reference
+        Target: ns=8;i=21
+        Direction: Forward
+      - Class: Reference
+        Target: ns=8;i=20
+        Direction: Forward
+      - Name: Columns
+        Type: BaseObjectType
+        Children:
+        - Name: DeviceID
+          Type: StoreColumn
+          DataType: Int32
+        - Name: DeviceName
+          Type: StoreColumn
+          DataType: String
+        - Name: TimeS
+          Type: StoreColumn
+          DataType: DateTime
+        - Name: PowerP
+          Type: StoreColumn
+          DataType: Int32
+        - Name: Voltage
+          Type: StoreColumn
+          DataType: Int32
+        - Name: Current
+          Type: StoreColumn
+          DataType: Int32
+        - Name: Frequency
+          Type: StoreColumn
+          DataType: Int32
+  - Name: Type
+    Type: PropertyType
+    DataType: DBMSType
+    Value: 2
+  - Name: Username
+    Type: PropertyType
+    DataType: String
+    Value: "Administrator"
+  - Name: Password
+    Type: PropertyType
+    DataType: Password
+  - Name: SFEnabled
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: SFBufferMaxSize
+    Type: BaseDataVariableType
+    DataType: UInt32
+    Value: 1000
+  - Name: SFBufferUsage
+    Type: BaseDataVariableType
+    DataType: UInt32
+    AccessLevel: Read
+  - Name: SFBufferOverflow
+    Type: BaseDataVariableType
+    DataType: Boolean
+    AccessLevel: Read
+  - Name: SFBufferOverwrite
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: MaxColumnNameLength
+    Type: BaseDataVariableType
+    DataType: UInt32
+    AccessLevel: Read
+  - Name: MaxColumnCount
+    Type: BaseDataVariableType
+    DataType: UInt32
+    AccessLevel: Read
+  - Name: DataTypeCompatibilityMap
+    Type: BaseDataVariableType
+    DataType: NodeId
+    AccessLevel: Read
+    ValueRank: OneOrMoreDimensions
+    ArrayDimensions: [0,0]
+  - Name: Status
+    Type: PropertyType
+    DataType: StoreStatus
+    AccessLevel: Read
+    Value: 2
+  - Class: Reference
+    Target: ns=8;i=22
+    Direction: Forward
+  - Class: Reference
+    Target: ns=8;i=6
+    Direction: Forward
+  - Class: Reference
+    Target: ns=8;i=8
+    Direction: Forward
+  - Class: Reference
+    Target: ns=8;i=25
+    Direction: Forward
+  - Class: Reference
+    Target: ns=8;i=38
+    Direction: Forward
+  - Class: Reference
+    Target: ns=8;i=41
+    Direction: Forward
+  - Class: Reference
+    Target: ns=8;i=44
+    Direction: Forward
+  - Class: Reference
+    Target: ns=8;i=53
+    Direction: Forward
+  - Class: Reference
+    Target: ns=8;i=55
+    Direction: Forward
+  - Class: Reference
+    Target: ns=8;i=57
+    Direction: Forward
+  - Class: Reference
+    Target: ns=8;i=59
+    Direction: Forward
+  - Name: DSN
+    Type: PropertyType
+    DataType: String
+    Value: "FT Optix Connector"
+- Name: EmbeddedDatabase1
+  Id: g=c55b8695882ed179d2be7b51e8d1f779
+  Type: SQLiteStore
+  Children:
+  - Name: Tables
+    Type: BaseObjectType
+    Children:
+    - Name: DataLogger1
+      Type: SQLiteStoreTable
+      Children:
+      - Class: Reference
+        Target: ns=8;i=12
+        Direction: Forward
+      - Class: Reference
+        Target: ns=8;i=15
+        Direction: Forward
+      - Class: Reference
+        Target: ns=8;i=21
+        Direction: Forward
+      - Class: Reference
+        Target: ns=8;i=20
+        Direction: Forward
+      - Name: Columns
+        Type: BaseObjectType
+        Children:
+        - Name: Timestamp
+          Type: StoreColumn
+          DataType: UtcTime
+        - Name: LocalTimestamp
+          Type: StoreColumn
+          DataType: DateTime
+        - Name: Công suất (kW)
+          Type: StoreColumn
+          DataType: Int32
+        - Name: Điện áp (V)
+          Type: StoreColumn
+          DataType: Int32
+        - Name: Dòng điện (A)
+          Type: StoreColumn
+          DataType: Int32
+    - Name: DataLogger2
+      Type: SQLiteStoreTable
+      Children:
+      - Class: Reference
+        Target: ns=8;i=12
+        Direction: Forward
+      - Class: Reference
+        Target: ns=8;i=15
+        Direction: Forward
+      - Class: Reference
+        Target: ns=8;i=21
+        Direction: Forward
+      - Class: Reference
+        Target: ns=8;i=20
+        Direction: Forward
+      - Name: Columns
+        Type: BaseObjectType
+        Children:
+        - Name: Timestamp
+          Type: StoreColumn
+          DataType: UtcTime
+        - Name: LocalTimestamp
+          Type: StoreColumn
+          DataType: DateTime
+        - Name: Variable4
+          Type: StoreColumn
+          DataType: Int32
+        - Name: Variable5
+          Type: StoreColumn
+          DataType: Int32
+        - Name: Variable6
+          Type: StoreColumn
+          DataType: Int32
+    - Name: DataLogger3
+      Type: SQLiteStoreTable
+      Children:
+      - Class: Reference
+        Target: ns=8;i=12
+        Direction: Forward
+      - Class: Reference
+        Target: ns=8;i=15
+        Direction: Forward
+      - Class: Reference
+        Target: ns=8;i=21
+        Direction: Forward
+      - Class: Reference
+        Target: ns=8;i=20
+        Direction: Forward
+      - Name: Columns
+        Type: BaseObjectType
+        Children:
+        - Name: Timestamp
+          Type: StoreColumn
+          DataType: UtcTime
+        - Name: LocalTimestamp
+          Type: StoreColumn
+          DataType: DateTime
+        - Name: Variable7
+          Type: StoreColumn
+          DataType: Int32
+        - Name: Variable8
+          Type: StoreColumn
+          DataType: Int32
+        - Name: Variable9
+          Type: StoreColumn
+          DataType: Int32
+    - Name: DataLogger4
+      Type: SQLiteStoreTable
+      Children:
+      - Class: Reference
+        Target: ns=8;i=12
+        Direction: Forward
+      - Class: Reference
+        Target: ns=8;i=15
+        Direction: Forward
+      - Class: Reference
+        Target: ns=8;i=21
+        Direction: Forward
+      - Class: Reference
+        Target: ns=8;i=20
+        Direction: Forward
+      - Name: Columns
+        Type: BaseObjectType
+        Children:
+        - Name: Timestamp
+          Type: StoreColumn
+          DataType: UtcTime
+        - Name: LocalTimestamp
+          Type: StoreColumn
+          DataType: DateTime
+        - Name: Variable1
+          Type: StoreColumn
+          DataType: Int32
+        - Name: Variable3
+          Type: StoreColumn
+          DataType: Int32
+        - Name: Variable5
+          Type: StoreColumn
+          DataType: Int32
+        - Name: Variable7
+          Type: StoreColumn
+          DataType: Int32
+        - Name: Variable9
+          Type: StoreColumn
+          DataType: Int32
+  - Class: Reference
+    Target: ns=21;i=30
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=33
+    Direction: Forward
+  - Name: MaxColumnNameLength
+    Type: BaseDataVariableType
+    DataType: UInt32
+    AccessLevel: Read
+  - Name: MaxColumnCount
+    Type: BaseDataVariableType
+    DataType: UInt32
+    AccessLevel: Read
+  - Name: DataTypeCompatibilityMap
+    Type: BaseDataVariableType
+    DataType: NodeId
+    AccessLevel: Read
+    ValueRank: OneOrMoreDimensions
+    ArrayDimensions: [0,0]
+  - Name: Status
+    Type: PropertyType
+    DataType: StoreStatus
+    AccessLevel: Read
+    Value: 2
+  - Class: Reference
+    Target: ns=8;i=22
+    Direction: Forward
+  - Class: Reference
+    Target: ns=8;i=6
+    Direction: Forward
+  - Class: Reference
+    Target: ns=8;i=8
+    Direction: Forward
+  - Class: Reference
+    Target: ns=8;i=25
+    Direction: Forward
+  - Class: Reference
+    Target: ns=8;i=38
+    Direction: Forward
+  - Class: Reference
+    Target: ns=8;i=41
+    Direction: Forward
+  - Class: Reference
+    Target: ns=8;i=44
+    Direction: Forward
+  - Class: Reference
+    Target: ns=8;i=53
+    Direction: Forward
+  - Class: Reference
+    Target: ns=8;i=55
+    Direction: Forward
+  - Class: Reference
+    Target: ns=8;i=57
+    Direction: Forward
+  - Class: Reference
+    Target: ns=8;i=59
+    Direction: Forward

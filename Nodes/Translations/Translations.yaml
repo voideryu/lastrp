@@ -1,0 +1,19 @@
+Name: Translations
+Type: TranslationsCategoryFolder
+Children:
+- Name: LocalizationDictionary1
+  Type: LocalizationDictionary
+  DataType: String
+  ValueRank: OneOrMoreDimensions
+  ArrayDimensions: [0,0]
+  Value: 
+   {
+    "Type": 12,
+    "Dimensions": [4,2],
+    "Body": [
+     "","en-US",
+     "Messages","Messages",
+     "Conveyor 1 _Belt maintenance: 2 days left","Conveyor 1 \nBelt maintenance: 2 days left",
+     "Maintenance reminder","Maintenance reminder"
+    ]
+   }

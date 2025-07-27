@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>ECharts</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5"></script>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    #main {
+      width: 100vw;
+      height: 95vh;
+      background-color: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(20px);
+    }
+  </style>
+</head>
+<body>
+  <div id="main"></div>
+
+  <script>
+    const chartDom = document.getElementById('main');
+    const myChart = echarts.init(chartDom);
+
+    function fetchAndUpdateChart() {
+      fetch('/data')
+        .then(res => res.json())
+        .then(data => {
+          const option = {
+            title: {
+              text: 'Thiết bị tiêu thụ năng lượng (7 ngày)',
+              left: 'center'
+            },
+            tooltip: {
+              trigger: 'axis',
+              axisPointer: {
+                type: 'cross',
+                label: { backgroundColor: '#6a7985' }
+              }
+            },
+            legend: {
+              top: '10%',
+              data: ['HMI', 'VFD', 'ARM', 'RTU', 'PLC']
+            },
+            toolbox: {
+              feature: {
+                saveAsImage: {}
+              }
+            },
+            grid: {
+              left: '3%',
+              right: '4%',
+              bottom: '10%',
+              containLabel: true
+            },
+            xAxis: [{
+              type: 'category',
+              boundaryGap: false,
+              data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            }],
+            yAxis: [{ type: 'value' }],
+            series: [
+              {
+                name: 'HMI',
+                type: 'line',
+                stack: 'Total',
+                areaStyle: {},
+                emphasis: { focus: 'series' },
+                data: data.HMI
+              },
+              {
+                name: 'VFD',
+                type: 'line',
+                stack: 'Total',
+                areaStyle: {},
+                emphasis: { focus: 'series' },
+                data: data.VFD
+              },
+              {
+                name: 'ARM',
+                type: 'line',
+                stack: 'Total',
+                areaStyle: {},
+                emphasis: { focus: 'series' },
+                data: data.ARM
+              },
+              {
+                name: 'RTU',
+                type: 'line',
+                stack: 'Total',
+                areaStyle: {},
+                emphasis: { focus: 'series' },
+                data: data.RTU
+              },
+              {
+                name: 'PLC',
+                type: 'line',
+                stack: 'Total',
+                label: {
+                  show: true,
+                  position: 'top'
+                },
+                areaStyle: {},
+                emphasis: { focus: 'series' },
+                data: data.PLC
+              }
+            ]
+          };
+          myChart.setOption(option);
+        })
+        .catch(err => {
+          console.error("Lỗi khi tải dữ liệu từ /data:", err);
+        });
+    }
+
+    // Gọi lần đầu và cập nhật mỗi 5 giây (tuỳ chỉnh nếu muốn)
+    fetchAndUpdateChart();
+    setInterval(fetchAndUpdateChart, 3000);
+  </script>
+</body>
+</html>

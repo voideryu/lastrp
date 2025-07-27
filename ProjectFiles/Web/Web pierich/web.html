@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>ECharts Weather Pie Chart</title>
+  <script src="echarts.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+    }
+    #main {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="main"></div>
+  <script>
+    const chartDom = document.getElementById('main');
+    const myChart = echarts.init(chartDom);
+
+    // Sử dụng đường dẫn tương đối (cùng thư mục)
+    const weatherIcons = {
+      Sunny: 'icons8-sunny-48.png',
+      Cloudy: 'icons8-cloudy-48.png',
+      Showers: 'icons8-rain-50.png'
+    };
+
+    const option = {
+      title: {
+        text: 'Tỉ lệ tiêu thụ điện năng theo khu vực / nhóm tiêu dùng',
+        subtext: 'nguồn: Sở Công Thương',
+        left: 'center'
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b} : {c} ({d}%)'
+      },
+      legend: {
+        bottom: 10,
+        left: 'center',
+        data: ['Khu công nghiệp', 'Dân dụng', 'Thương mại', 'Nông nghiệp', 'Thành phố'],
+      },
+      series: [
+        {
+          type: 'pie',
+          radius: '65%',
+          center: ['50%', '50%'],
+          selectedMode: 'single',
+          data: [
+            {
+              value: 1548,
+              name: 'Thành phố',
+              label: {
+                formatter: [
+                  '{title|{b}}{abg|}',
+                  '  {weatherHead|Weather}{valueHead|Days}{rateHead|Percent}',
+                  '{hr|}',
+                  '  {Sunny|}{value|202}{rate|55.3%}',
+                  '  {Cloudy|}{value|142}{rate|38.9%}',
+                  '  {Showers|}{value|21}{rate|5.8%}'
+                ].join('\n'),
+                backgroundColor: '#eee',
+                borderColor: '#777',
+                borderWidth: 1,
+                borderRadius: 4,
+                rich: {
+                  title: {
+                    color: '#eee',
+                    align: 'center'
+                  },
+                  abg: {
+                    backgroundColor: '#333',
+                    width: '100%',
+                    align: 'right',
+                    height: 25,
+                    borderRadius: [4, 4, 0, 0]
+                  },
+                  Sunny: {
+                    height: 30,
+                    align: 'left',
+                    backgroundColor: {
+                      image: weatherIcons.Sunny
+                    }
+                  },
+                  Cloudy: {
+                    height: 30,
+                    align: 'left',
+                    backgroundColor: {
+                      image: weatherIcons.Cloudy
+                    }
+                  },
+                  Showers: {
+                    height: 30,
+                    align: 'left',
+                    backgroundColor: {
+                      image: weatherIcons.Showers
+                    }
+                  },
+                  weatherHead: {
+                    color: '#333',
+                    height: 24,
+                    align: 'left'
+                  },
+                  hr: {
+                    borderColor: '#777',
+                    width: '100%',
+                    borderWidth: 0.5,
+                    height: 0
+                  },
+                  value: {
+                    width: 20,
+                    padding: [0, 20, 0, 30],
+                    align: 'left'
+                  },
+                  valueHead: {
+                    color: '#333',
+                    width: 20,
+                    padding: [0, 20, 0, 30],
+                    align: 'center'
+                  },
+                  rate: {
+                    width: 40,
+                    align: 'right',
+                    padding: [0, 10, 0, 0]
+                  },
+                  rateHead: {
+                    color: '#333',
+                    width: 40,
+                    align: 'center',
+                    padding: [0, 10, 0, 0]
+                  }
+                }
+              }
+            },
+            { value: 735, name: 'Nông nghiệp' },
+            { value: 510, name: 'Thương mại' },
+            { value: 434, name: 'Dân dụng'},
+            { value: 335, name: 'Khu công nghiệp' }
+          ],
+          emphasis: {
+            itemStyle: {
+              shadowBlur: 10,
+              shadowOffsetX: 0,
+              shadowColor: 'rgba(0, 0, 0, 0.5)'
+            }
+          }
+        }
+      ]
+    };
+
+    myChart.setOption(option);
+  </script>
+</body>
+</html>

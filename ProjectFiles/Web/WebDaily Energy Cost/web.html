@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>ECharts SVG Map</title>
+  <script src="echarts.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+    }
+    #main {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="main"></div>
+  <script>
+    const chartDom = document.getElementById('main');
+    const myChart = echarts.init(chartDom);
+
+    // Dùng fetch để lấy file SVG nội bộ
+    fetch('MacOdrum-LV5-floorplan-web.svg')
+      .then(response => response.text())
+      .then(svg => {
+        echarts.registerMap('floorplan', { svg: svg });
+
+        const option = {
+          title: {
+            text: 'Route Map',
+            left: 'center'
+          },
+          geo: {
+            map: 'floorplan',
+            roam: true
+          },
+          series: [{
+            name: 'Route',
+            type: 'lines',
+            coordinateSystem: 'geo',
+            polyline: true,
+            lineStyle: {
+              color: 'red',
+              width: 4
+            },
+            effect: {
+              show: true,
+              constantSpeed: 40,
+              trailLength: 0.3,
+              symbolSize: 8
+            },
+            // data: [{
+            //   coords: [
+            //     [500, 100],
+            //     [200, 100],
+            //     [300, 100]
+            //   ]
+            // }]
+          }]
+        };
+
+        myChart.setOption(option);
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+Name: dashboard var
+Type: FolderType
+Children:
+- Name: OSE
+  Type: BaseDataVariableType
+  DataType: Int32
+- Name: REU
+  Type: BaseDataVariableType
+  DataType: Int32
+- Name: CER
+  Type: BaseDataVariableType
+  DataType: Int32

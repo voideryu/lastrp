@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module version="1">
+    <Name>lastrpUserDefinedModule</Name>
+    <Company></Company>
+    <Version>0.0.0</Version>
+    <MinUpgradableVersion>0.0.0</MinUpgradableVersion>
+    <Binding name="Net" />
+
+    <Namespaces/>
+
+    <Dependencies>
+        <Core version="0.0.0" />
+        <Binding version="0.0.0" />
+        <Module name="FTOptix.HMIProject.Net" version="0.0.0" />
+    </Dependencies>
+
+    <Nodes/>
+
+    <TypeMappings>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="lastrp" guid="492fa2eb4891118aac34ebba58723492" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="lastrp" guid="01a7e8933afd7c95fe894b0859308138" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="lastrp" guid="dc894e640083b4df7974d51ac1172a71" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="lastrp" guid="d13b3f1a02568c5a1c5b501f6783142c" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="lastrp" guid="f63b6df94834ae93261ee8770e693a5a" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="lastrp" guid="9f715b3095d10d2f37d9cb08331c6e3f" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="lastrp" guid="43f363f719ceaf54bb3acb928a2f3e2e" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="lastrp" guid="3290b99651f8b302250b5068893007e2" />
+            </TargetType>
+        </TypeMapping>
+    </TypeMappings>
+</Module>

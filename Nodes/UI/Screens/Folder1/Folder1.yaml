@@ -1,0 +1,7 @@
+Name: Folder1
+Type: FolderType
+Children:
+- Name: Screen1
+  Id: g=dc894e640083b4df7974d51ac1172a71
+  Supertype: Screen
+  ReferenceType: HasComponent
